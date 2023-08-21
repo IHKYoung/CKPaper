@@ -1,0 +1,51 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "CKPaper"
+license = "MIT"
+licenselink = "https://github.com/IHKYoung/CKPaper.git/blob/master/LICENSE"
+description = "CK Paper"
+homepage = "https://IHKYoung.github.io/CKPaper/"
+tags = [
+  "responsive",
+  "simple",
+  "clean",
+  "light",
+  "dark",
+  "blog",
+  "minimalist",
+  "highlight.js",
+  "search"
+]
+features = [
+  "responsive",
+  "single-column",
+  "blog",
+  "cover-image",
+  "table-of-contents",
+  "opengraph",
+  "highlight.js",
+  "favicon",
+  "archive",
+  "share-icons",
+  "cover",
+  "multilingual",
+  "social-icons",
+  "minified-assets",
+  "theme-toggle",
+  "menu-location-indicator",
+  "scroll-to-top",
+  "search"
+]
+min_version = "0.97.1"
+
+[author]
+  name = "Zeal Young"
+  homepage = "https://github.com/IHKYoung/"
+
+# If porting an existing theme
+[original]
+  name = "Paper"
+  author = "nanxiaobei"
+  homepage = "https://github.com/nanxiaobei"
+  repo = "https://github.com/nanxiaobei/hugo-paper/"

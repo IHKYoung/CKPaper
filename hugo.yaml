@@ -1,0 +1,67 @@
+params:
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: AhaKnow
+    subtitle: "凡未知，皆可识📚因知识，而有趣～"
+    imageUrl: "Q.gif"
+    imageWidth: 200
+    imageHeight: 200
+    imageTitle: Aha! I know!
+    buttons:
+    - name: 📖读书
+      url: posts/read
+    - name: 💡思考
+      url: posts/think
+    - name: 🌟知识
+      url: posts/know
+
+
+  label: # 左上角图标
+    text: "AhaKnow"
+    icon: "Q.gif"
+    iconHeight: 35
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "Q.gif"
+    favicon16x16: "Q.gif"
+    favicon32x32: "Q.gif"
+    apple_touch_icon: "Q.gif"
+    safari_pinned_tab: "Q.gif"
+    disableFingerprinting: true # 禁用指纹
+
+  # for search
+  fuseOpts:
+    isCaseSensitive: false
+    includeMatches: true
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+  - identifier: search
+    name: 🔍搜索
+    url: search
+    weight: 0
+  - identifier: home
+    name: 🏡主页
+    url: /
+    weight: 1
+  - identifier: posts
+    name: 📚专栏
+    url: posts
+    weight: 3
+  - identifier: categories
+    name: 🖇️归档
+    url: categories
+    weight: 4
+  - identifier: tags
+    name: 🏷️标签
+    url: tags
+    weight: 5

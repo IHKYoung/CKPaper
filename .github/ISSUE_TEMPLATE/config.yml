@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+- name: CKPaper Discussions
+  url: https://github.com/IHKYoung/CKPaper.git/discussions
+  about: Please ask and answer questions/doubts here, do not open an issue for questions.
