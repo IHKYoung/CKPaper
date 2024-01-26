@@ -21,16 +21,17 @@
 
 .buttons {
     flex-wrap: wrap;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .button {
-    background: var(--tertiary);
+    background: var(--entry);
     border-radius: var(--radius);
     margin: 8px;
     padding: 6px;
     transition: transform 0.1s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .button-inner {
