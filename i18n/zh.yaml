@@ -15,7 +15,7 @@
     other: "{{ .Count }} 字"
 
 - id: toc
-  translation: "文章目录"
+  translation: "📚目录"
 
 - id: translations
   translation: "🌍语言"
@@ -27,7 +27,7 @@
   translation: "📝编辑"
 
 - id: code_copy
-  translation: "🖨️拷贝"
+  translation: "🖨️打印"
 
 - id: code_copied
-  translation: "📋已拷贝"
+  translation: "📋备份"

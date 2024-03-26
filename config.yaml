@@ -15,8 +15,6 @@ params:
       url: posts/think
     - name: 🌟知识
       url: posts/know
-    - name: 📓日记
-      url: posts/diary
 
 
   label: # 左上角图标
