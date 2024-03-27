@@ -4,9 +4,11 @@
 
 <!DOCTYPE html>
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
-
 <head>
     {{- partial "head.html" . }}
+    <!-- highlight.js 比较好看的: rainbow hybrid-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/rainbow.min.css">-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>-->
 </head>
 
 <body class="
@@ -22,6 +24,9 @@
         {{- block "main" . }}{{ end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+
+<!-- highlight.js -->
+<!--<script>hljs.highlightAll();</script>-->
 </body>
 
 </html>

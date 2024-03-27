@@ -23,8 +23,6 @@ params:
     iconHeight: 35
 
   assets:
-    disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
     favicon: "Q.gif"
     favicon16x16: "Q.gif"
     favicon32x32: "Q.gif"
@@ -54,7 +52,7 @@ menu:
     url: /
     weight: 1
   - identifier: posts
-    name: 📚专栏
+    name: 🚀天天向上
     url: posts
     weight: 3
   - identifier: archives
@@ -66,6 +64,7 @@ menu:
     url: tags
     weight: 5
   - identifier: categories
-    name: 🖇️归档
+    name: 🖇归档
     url: categories
     weight: 5
+

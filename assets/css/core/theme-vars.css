@@ -13,8 +13,12 @@
     --tertiary: rgb(214, 214, 214);
     --content: rgb(31, 31, 31);
     --code-block-bg: rgb(28, 29, 33);
+    /*--code-block-bg: #130c0e;*/
     --code-bg: rgb(245, 245, 245);
     --border: rgb(238, 238, 238);
+    --emphasize: #F4606C;
+    --link: #19CAAD;
+
 }
 
 .dark {

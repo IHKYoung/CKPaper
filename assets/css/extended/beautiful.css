@@ -1,0 +1,138 @@
+/* ----- font ----- */
+@font-face {
+    font-family: "LXGWWenKaiGBScreen";
+    src: url("/fonts/LXGWWenKaiGBScreen.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "LXGWWenKaiMonoGBScreen";
+    src: url("/fonts/LXGWWenKaiMonoGBScreen.ttf") format("truetype");
+}
+
+/* ----- code -----*/
+.mac-code-block {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    background-color: #eee; /* 窗口控制栏背景色 */
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.mac-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.mac-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.language-type {
+    font-size: 12px;
+    color: #333; /* 语言类型文字颜色 */
+}
+
+/* shortcode 方法 */
+.mac-shortcode-block {
+    position: relative;
+}
+
+.mac-shortcode-buttons {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.mac-shortcode-buttons span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* ----- blockquote ----- */
+blockquote {
+    border-radius: var(--radius);
+    font-size: 0.9em;
+}
+
+blockquote:before {
+    content: "“"; /* 引用开始的大引号 */
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+    color: var(--primary);
+}
+
+blockquote:after {
+    content: "”"; /* 引用结束的大引号 */
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.4em;
+    color: var(--primary);
+}
+
+blockquote p {
+    display: inline; /* 保持文本行内显示 */
+}
+
+/* ----- mark 记号笔效果 ----- */
+mark {
+    margin: 0 -0.4em;
+    padding: 0.1em 0.4em; /* 增加0.1em的上下填充 */
+    border-radius: 0.8em 0.3em;
+    background: transparent; /* 保持背景透明 */
+    color: var(--content); /* 文本颜色 */
+    background-image: linear-gradient(to right, rgba(244, 96, 108, 0.1), rgba(244, 96, 108, 0.7) 4%, rgba(244, 96, 108, 0.3));
+    box-decoration-break: clone; /* 确保在多行文本上也能正确显示背景 */
+    -webkit-box-decoration-break: clone; /* 兼容旧版WebKit浏览器 */
+}
+
+/* 适应不同屏幕尺寸的样式调整（示例） */
+@media (max-width: 768px) {
+    mark {
+        margin: 0 -0.2em;
+        padding: 0.1em 0.2em; /* 在较小屏幕上减少填充和外边距 */
+    }
+}
+
+/* 微调字体间距 */
+h1 {
+    margin-top: 5px;
+}
+
+/* 超链接动态 */
+a {
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+}
+
+.post-content a:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 66%;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+    background-color: rgba(25, 202, 173, 0.75);
+}
+
+.post-content a:hover:after {
+    top: 0%;
+}

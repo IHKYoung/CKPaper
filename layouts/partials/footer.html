@@ -8,7 +8,7 @@
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+        <a href="https://github.com/IHKYoung/CKPaper/" rel="noopener" target="_blank">CKPaper</a>
     </span>
 </footer>
 {{- end }}
@@ -102,7 +102,10 @@
 
         copybutton.addEventListener('click', (cb) => {
             if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
+                // navigator.clipboard.writeText(codeblock.textContent);
+                // 增加版权声明
+                let copyText = codeblock.textContent + '\r\n————————————————\r\n' + '版权声明：本文为「'+{{ .Site.Title }}+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' + '\r\n原文链接：' + location.href;
+                navigator.clipboard.writeText(copyText);
                 copyingDone();
                 return;
             }
@@ -130,6 +133,40 @@
             // code blocks not having highlight as parent class
             codeblock.parentNode.appendChild(copybutton);
         }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('pre > code[class*="language-"]').forEach(function(codeblock) {
+            // 现在codeblock将只是那些具有编程语言类名的<code>元素
+            // 从类名中提取编程语言
+            let language = codeblock.className.match(/language-(\w+)/)[1] || "code";
+
+            // 创建用于模拟Mac窗口控制按钮的元素
+            let macCodeBlock = document.createElement("div");
+            let macButtons = document.createElement("div");
+            let buttons = ['close', 'minimize', 'maximize'].map(function(className) {
+                let button = document.createElement("div");
+                button.setAttribute('class', `mac-button ${className}`);
+                return button;
+            });
+            let languageType = document.createElement("div");
+            languageType.innerText = language;
+            languageType.setAttribute('class', 'language-type');
+
+            // 组装控制按钮
+            macButtons.setAttribute('class', 'mac-buttons');
+            buttons.forEach(function(button) {
+                macButtons.appendChild(button);
+            });
+            macCodeBlock.appendChild(macButtons);
+            macCodeBlock.appendChild(languageType);
+            macCodeBlock.setAttribute('class', 'mac-code-block');
+
+            // 将控制按钮和语言类型标签添加到<code>的父元素<pre>之前
+            codeblock.parentNode.insertBefore(macCodeBlock, codeblock);
+        });
     });
 </script>
 {{- end }}
