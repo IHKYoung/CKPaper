@@ -1,12 +1,14 @@
 /* ----- font ----- */
 @font-face {
-    font-family: "LXGWWenKaiGBScreen";
-    src: url("/fonts/LXGWWenKaiGBScreen.ttf") format("truetype");
+    font-family: "LXGW";
+    src: url("/fonts/LXGW.woff2") format("woff2");
+    font-display: swap; /* 使用回退字体直到自定义字体加载完毕 */
 }
 
 @font-face {
-    font-family: "LXGWWenKaiMonoGBScreen";
-    src: url("/fonts/LXGWWenKaiMonoGBScreen.ttf") format("truetype");
+    font-family: "LXGWMono";
+    src: url("/fonts/LXGWMono.woff2") format("woff2");
+    font-display: swap; /* Use fallback font until the custom font is loaded */
 }
 
 /* ----- code -----*/
@@ -29,12 +31,47 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
+    margin-left: 2px;
     margin-right: 4px;
 }
 
 .close { background-color: #ff5f56; }
 .minimize { background-color: #ffbd2e; }
 .maximize { background-color: #27c93f; }
+
+/* 鼠标悬停在按钮上时的样式 */
+.mac-button:hover {
+    opacity: 0.8; /* 使按钮在悬停时稍微透明，提供视觉反馈 */
+}
+
+/* 为每个按钮添加伪元素，这里使用文本标识作为例子 */
+.mac-button.close:after,
+.mac-button.minimize:after,
+.mac-button.maximize:after {
+    content: ''; /* 根据需要可以在这里添加图标或文字 */
+    display: none;
+    position: absolute;
+    /* 调整伪元素的位置、大小和其他样式以适应设计 */
+}
+
+/* 鼠标悬停在按钮上时显示伪元素（图标或文字标识） */
+.mac-button:hover:after {
+    display: block;
+}
+
+/* 为不同按钮设置不同的标识 */
+.mac-button.close:after { content: '✖'; } /* 示例：使用'X'作为关闭按钮的标识 */
+.mac-button.minimize:after { content: '—'; } /* 示例：使用'—'作为最小化按钮的标识 */
+.mac-button.maximize:after { content: '□'; } /* 示例：使用'□'作为最大化按钮的标识 */
+
+/* 调整伪元素（标识）的具体样式 */
+.mac-button:after {
+    color: var(--code-block-bg); /* 标识颜色 */
+    font-size: 10px; /* 根据需要调整大小 */
+    font-weight: bolder; /* 根据需要调整粗细 */
+    margin-left: 3px; /* 根据实际情况调整位置使其居中 */
+    margin-top: -3px; /* 根据实际情况调整位置使其居中 */
+}
 
 .language-type {
     font-size: 12px;
@@ -83,10 +120,6 @@ blockquote:after {
     margin-left: 0.25em;
     vertical-align: -0.4em;
     color: var(--primary);
-}
-
-blockquote p {
-    display: inline; /* 保持文本行内显示 */
 }
 
 /* ----- mark 记号笔效果 ----- */

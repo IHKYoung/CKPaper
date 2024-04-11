@@ -7,7 +7,7 @@ params:
     imageUrl: "Q.gif"
     imageWidth: 200
     imageHeight: 200
-    imageTitle: Aha! I know!
+    imageTitle: Aha! I Know!
     buttons:
     - name: 📖读书
       url: posts/read
@@ -15,7 +15,6 @@ params:
       url: posts/think
     - name: 🌟知识
       url: posts/know
-
 
   label: # 左上角图标
     text: "AhaKnow"
@@ -67,4 +66,9 @@ menu:
     name: 🖇归档
     url: categories
     weight: 5
+  - identifier: toolkits
+    name: 🧰医疗箱
+    url: toolkits
+    weight: 6
+
 
