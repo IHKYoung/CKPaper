@@ -1,23 +1,85 @@
-{{- $scratch := newScratch }}
+<!--{{- $scratch := newScratch }}-->
 
-{{- if not .Date.IsZero -}}
-{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default "January 2, 2006" site.Params.DateFormat)))) }}
-{{- end }}
+<!--{{- if gt .Lastmod .Date -}}-->
+<!--{{- $scratch.Add "meta" (slice (printf "<span title='%s'>Update: %s</span>" (.Lastmod) (.Lastmod | time.Format (default "January 2, 2006" .Site.Params.DateFormat)))) }}-->
+<!--{{- end }}-->
 
-{{- if (.Param "ShowReadingTime") -}}
-{{- $scratch.Add "meta" (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}
-{{- end }}
+<!--{{- if not .Date.IsZero -}}-->
+<!--{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default "January 2, 2006" site.Params.DateFormat)))) }}-->
+<!--{{- end }}-->
 
-{{- if (.Param "ShowWordCount") -}}
-{{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
-{{- end }}
+<!--{{- if (.Param "ShowReadingTime") -}}-->
+<!--{{- $scratch.Add "meta" (slice (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime))) }}-->
+<!--{{- end }}-->
 
-{{- if not (.Param "hideAuthor") -}}
-{{- with (partial "author.html" .) }}
-{{- $scratch.Add "meta" (slice .) }}
-{{- end }}
-{{- end }}
+<!--{{- if (.Param "ShowWordCount") -}}-->
+<!--{{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}-->
+<!--{{- end }}-->
 
-{{- with ($scratch.Get "meta") }}
-{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
-{{- end -}}
+<!--{{- if not (.Param "hideAuthor") -}}-->
+<!--{{- with (partial "author.html" .) }}-->
+<!--{{- $scratch.Add "meta" (slice .) }}-->
+<!--{{- end }}-->
+<!--{{- end }}-->
+
+<!--{{- with ($scratch.Get "meta") }}-->
+<!--{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}-->
+<!--{{- end -}}-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<span class="parent-post-meta">
+        <span id="post_meta_style_1">
+            <span class="fa fa-calendar-check-o"></span>
+            <span>
+                {{- (.Lastmod.Format (default "January 2, 2006" .Site.Params.DateFormat)) }}
+                &nbsp;&nbsp;
+            </span>
+        </span>
+        <span id="post_meta_style_2">
+        <span class="fa fa-calendar-plus-o"></span>
+        <span>
+            {{- (.Date.Format (default "January 2, 2006" .Site.Params.DateFormat)) }}
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>
+            {{- (i18n "words" .WordCount | default (printf "%d words" .WordCount)) }}
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>
+            {{- (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)) }}
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>
+            {{- with (partial "author.html" .) }}
+            {{- . }}
+            {{- end }}
+            &nbsp;&nbsp;
+        </span>
+    </span>
+
+    {{- if and .Params.tags (gt (len .Params.tags) 0) }}
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+                {{- range $index, $value := ($.GetTerms "tags") }}
+                {{- if eq $index 0}}
+                <a href="{{ .Permalink }}" style="color: var(--secondary)!important;">{{ .LinkTitle }}</a>
+                {{- else }}
+                &nbsp;<a href="{{ .Permalink }}" style="color: var(--secondary)!important;">{{ .LinkTitle }}</a>
+                {{- end }}
+                {{- end }}
+            </span>
+        </span>
+    </span>
+    {{- end }}
+</span>

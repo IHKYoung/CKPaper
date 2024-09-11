@@ -1,13 +1,14 @@
-/* ----- font ----- */
+ /*----- font -----*/
 @font-face {
     font-family: "LXGW";
-    src: url("/fonts/LXGW.woff2") format("woff2");
+    /*src: url("/fonts/LXGW.woff2") format("woff2");*/
+    src: url('https://cdn.jsdelivr.net/gh/IHKYoung/CKResources/fonts/LXGW.woff2') format('woff2');
     font-display: swap; /* 使用回退字体直到自定义字体加载完毕 */
 }
 
 @font-face {
     font-family: "LXGWMono";
-    src: url("/fonts/LXGWMono.woff2") format("woff2");
+    src: url("https://cdn.jsdelivr.net/gh/IHKYoung/CKResources/fonts/LXGWMono.woff2") format("woff2");
     font-display: swap; /* Use fallback font until the custom font is loaded */
 }
 
@@ -154,6 +155,7 @@ a {
     position: relative;
 }
 
+.post-tags-meta a:after,
 .post-content a:after {
     content: '';
     position: absolute;
@@ -166,6 +168,20 @@ a {
     background-color: rgba(25, 202, 173, 0.75);
 }
 
+.post-tags-meta a:hover:after,
 .post-content a:hover:after {
     top: 0%;
+}
+
+/* 文章元数据 */
+i[id*="post_meta_style"] {
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+
+.parent-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0.8;
 }
