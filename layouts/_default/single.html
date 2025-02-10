@@ -28,19 +28,16 @@
     </div>
     {{- end }}
   </header>
+
+  <!-- 封面和 TOC 逻辑 -->
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
   {{- if (.Param "ShowToc") }}
   {{- partial "toc_side.html" . }}
   {{- end }}
 
-  {{- if .Content }}
-  <div class="post-content">
-    {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
-  </div>
-  {{- end }}
+  <!-- 调用独立的密码保护 partial -->
+  {{ partial "password_protect.html" . }}
 
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
