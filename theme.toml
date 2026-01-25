@@ -40,7 +40,7 @@ features = [
 min_version = "0.97.1"
 
 [author]
-  name = "Zeal Young"
+  name = "Clarke Young"
   homepage = "https://github.com/IHKYoung/"
 
 # If porting an existing theme
