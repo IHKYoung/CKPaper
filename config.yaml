@@ -13,6 +13,8 @@ params:
       url: posts/read
     - name: 💡思考
       url: posts/think
+    - name: 🚀创业日记
+      url: posts/startup
     - name: 🌟知识
       url: posts/know
 
@@ -70,5 +72,4 @@ menu:
     name: 🧰医疗箱
     url: toolkits
     weight: 6
-
 
