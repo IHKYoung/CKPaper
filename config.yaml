@@ -9,14 +9,13 @@ params:
     imageHeight: 200
     imageTitle: Aha! I Know!
     buttons:
-    - name: 📖读书
-      url: posts/read
     - name: 💡思考
       url: posts/think
-    - name: 🚀创业日记
-      url: posts/startup
     - name: 🌟知识
       url: posts/know
+    - name: 🚀创业
+      url: posts/startup
+
 
   label: # 左上角图标
     text: "AhaKnow"

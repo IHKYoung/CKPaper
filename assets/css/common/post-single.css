@@ -394,9 +394,18 @@ h6:hover .anchor {
     color: var(--secondary);
 }
 
+.paginav .post-nav-title {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .paginav .prev,
 .paginav .next {
     width: 50%;
+    min-width: 0;
 }
 
 .paginav span:hover:not(.title) {
