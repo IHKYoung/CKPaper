@@ -43,7 +43,7 @@
     margin: 24px 0 16px;
 }
 
-.post-content h1
+.post-content h1,
 .post-content h2,
 .post-content h3,
 .post-content h4,
@@ -79,11 +79,8 @@
 }
 
 .post-content a {
-{
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-}
-
 }
 .toc a:hover {
     box-shadow: 0 1px 0;
