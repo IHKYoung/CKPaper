@@ -3,18 +3,20 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: AhaKnow
-    subtitle: "凡未知，皆可识📚因知识，而有趣～"
+    subtitle: "凡未知，皆可识📚因知识，而有趣。"
     imageUrl: "Q.gif"
     imageWidth: 200
     imageHeight: 200
     imageTitle: Aha! I Know!
     buttons:
-    - name: 💡思考
+    - name: 💡思辨微光
       url: posts/think
-    - name: 🌟知识
+    - name: 🌟识海拾贝
       url: posts/know
-    - name: 🚀创业
+    - name: 🚀创业心路
       url: posts/startup
+    - name: 🤖AI日记
+      url: posts/ai-diary
 
 
   label: # 左上角图标
@@ -44,31 +46,30 @@ params:
 menu:
   main:
   - identifier: search
-    name: 🪄魔法
+    name: 🪄探索
     url: search
     weight: 1
   - identifier: home
-    name: 🏡主页
+    name: 🏡首页
     url: /
     weight: 2
   - identifier: posts
-    name: 🚀天天向上
+    name: 🚀持续生长
     url: posts
     weight: 3
   - identifier: archives
-    name: ⏱️时间线
+    name: ⏱️时序长廊
     url: archives
     weight: 4
   - identifier: tags
-    name: 🏷️标签
+    name: 🏷️词语标引
     url: tags
     weight: 5
   - identifier: categories
-    name: 🖇归档
+    name: 🖇专题归档
     url: categories
     weight: 5
   - identifier: toolkits
-    name: 🧰医疗箱
+    name: 🧰工具栈
     url: toolkits
     weight: 6
-
