@@ -15,8 +15,6 @@ params:
       url: posts/know
     - name: 🚀创业心路
       url: posts/startup
-    - name: 🤖AI日记
-      url: posts/ai-diary
 
 
   label: # 左上角图标
