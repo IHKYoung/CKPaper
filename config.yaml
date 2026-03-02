@@ -16,7 +16,6 @@ params:
     - name: 🚀创业心路
       url: posts/startup
 
-
   label: # 左上角图标
     text: "AhaKnow"
     icon: "Q.gif"
