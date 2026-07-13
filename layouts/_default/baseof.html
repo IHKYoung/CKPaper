@@ -43,7 +43,7 @@
 
 <!-- LXGW字体 -->
 
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "zh-cn" }}">
+<html lang="{{ .Language.Locale | default .Language.Lang }}" dir="{{ .Language.Direction | default "ltr" }}">
 <head>
     {{- partial "head.html" . }}
     <!-- highlight.js 比较好看的: rainbow hybrid-->
